@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    background-color: #000000;
+}
+
+header {
+    background: #000000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    color: #ffffff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.logo .logo-text {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.logo:hover .logo-text {
+    color: aqua;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-menu li.active,
+.nav-menu li:hover {
+    color: aqua;
+}
+
+.main-screen {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 139px);
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/raccoon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.background-fadeIn {
+    animation: fadeIn 0.25s;
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.player-area {
+    width: 400px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    filter: drop-shadow(0 0 7px aqua);
+    overflow: hidden;
+}
+
+.player-area .player-image img {
+    max-width: 100%;
+}
+
+.player-area .player-panel {
+    padding: 20px;
+}
+
+.player-panel .player-info {
+    text-align: center;
+    font-size: 20px;
+    color: #c5eeec;
+}
+
+.player-panel .player-info .song {
+    color: aqua;
+}
+
+.player-panel .player-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-panel .next-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.player-panel .control-play,
+.player-panel .control-next {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: linear 0.05s;
+}
+
+.control-play.play {
+    background-image: url('../img/play.svg');
+}
+
+.control-play.pause {
+    background-image: url('../img/pause.svg');
+}
+
+.control-next.previous {
+    background-image: url('../img/previous.svg');
+}
+
+.control-next.next {
+    background-image: url('../img/next.svg');
+}
+
+.progress-bar {
+    transition width 0.6s linear;
+}
+
+footer {
+    background: #000000;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer-block {
+    width: 33.3333%;
+    text-align: center;
+}
+
+.footer-block:last-child {
+    display: flex;
+    justify-content: end;
+}
+
+a.footer-github {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.footer-github:hover {
+    color: aqua;
+    text-decoration: underline;
+}
+
+a.footer-github img {
+    width: 50px;
+}
+
+a.footer-github span {
+    margin-left: 20px;
+}
+
+a.footer-rss img {
+    width: 100px;
+}
