@@ -22,8 +22,10 @@
         <div class="container">
             <div class="header-container">
                 <div class="logo" data-animal="main">
-                    <img src="img/logo.png" alt="">
-                    <div class="logo-text">Audio Player</div>
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="">
+                        <div class="logo-text">Audio Player</div>
+                    </a>
                 </div>
                 
             </div>
@@ -42,19 +44,30 @@
                 </div>
                 <div class="player-panel">
                     <div class="player-info">
-                        <span class="singer">Raccoon</span> ››
-                        <span class="song">Raccoon sound</span>
+                        <span class="singer"></span> ››
+                        <span class="song"></span>
                     </div>
                     <div class="player-controls">
                         <div class="control-play play"></div>
+
+                        <div class="player-volume-container">
+                            <div class="volume-icon"></div>
+                            <input type="range" id="volume" min="0" max="1" value="1" step="0.01" class="player-volume" />
+                        </div>
+
                         <div class="next-controls">
                             <div class="control-next previous" data-id="0"></div>
                             <div class="control-next next" data-id="0"></div>
                         </div>
                     </div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-danger" data-role="progressbar" style="width: 0%"></div>
-                    </div>
+                    <div class="player-timeline-container">
+                        <span class="player-time player-time-current">00:00</span>
+                        <div class="player-progress">
+                            <div class="player-progress-fill"></div>
+                        </div>
+                        <span class="player-time player-time-duration">00:00</span>
+                      </div>
+
                 </div>
             </div>
         </div>        
