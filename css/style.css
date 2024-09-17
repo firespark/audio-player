@@ -94,6 +94,7 @@ nav {
 
 .player-area {
     width: 400px;
+    max-width: 100%;
     margin: 20px;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.8);
