@@ -21,6 +21,7 @@ header {
 
 .logo a{
     display: flex;
+    justify-content: center;
     align-items: center;
     color: #ffffff;
     text-decoration: none;
@@ -172,14 +173,14 @@ nav {
 }
 
 .progress-bar {
-    transition width 0.6s linear;
+    transition: width 0.6s linear;
 }
 
 .player-panel .player-volume-container {
     display: flex;
     gap: 3px;
     align-items: center;
-    width: 60px;
+    width: 90px;
     margin-top: 10px;
 }
 
@@ -199,7 +200,7 @@ nav {
     border-radius: 25px;
     background: linear-gradient(to right, aqua 0%, aqua 100%, #135e5a 100%, #135e5a 100%);
     cursor: pointer;
-    -webkit-appearance: none;
+    appearance: none;
 }
 
 .player-panel  .player-volume::-webkit-slider-thumb {
@@ -234,7 +235,7 @@ nav {
     display: flex;
     flex: 10;
     flex-basis: 100%;
-    height: 6px;
+    height: 10px;
     margin: 0 5px;
     border-radius: 25px;
     background:#135e5a;
@@ -245,7 +246,7 @@ nav {
 .player-panel .player-progress-fill {
     flex: 0;
     flex-basis: 0%;
-    height: 6px;
+    height: 10px;
     border-radius: 25px;
     background:aqua;   
     transition: linear 0.05s;

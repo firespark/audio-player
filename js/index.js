@@ -1,41 +1,3 @@
-const animals = {
-    0: {
-        file: 'raccoon',
-        name: 'Raccoon',
-        song: 'Quack-Quack',
-    },
-    1: {
-        file: 'donkey',
-        name: 'Donkey',
-        song: 'Hee-Haw',
-    },
-    2: {
-        file: 'fox',
-        name: 'Fox',
-        song: 'Aaa-ha-ha-ha',
-    },
-    3: {
-        file: 'frog',
-        name: 'Frog',
-        song: 'He-he-he-he-he',
-    },
-    4: {
-        file: 'goat',
-        name: 'Goat',
-        song: 'AAAUUUUU',
-    },
-    5: {
-        file: 'marmot',
-        name: 'Marmot',
-        song: 'AAAAAAA',
-    },
-    6: {
-        file: 'seal',
-        name: 'Seal',
-        song: 'Bleat, Bleat...',
-    },
-};
-
 const wrapper = document.querySelector('.wrapper');
 const player = document.querySelector(".player-area");
 const playerImage = document.querySelector('.player-image img');
@@ -62,6 +24,7 @@ let playlist = [];
 let id = 0;
 let currentTime = 0;
 let volume = 100;
+let mousedown = false;
 
 function changeBackground() {
     wrapper.classList.add('background-fadeIn');
@@ -131,6 +94,10 @@ function prepareSong() {
     audio.currentTime = currentTime;
 }
 
+function drugProgress(e) {
+    audio.currentTime = (e.offsetX / progress.offsetWidth) * audio.duration;
+}
+
 playBtn.addEventListener("click", function () {
 
     if (this.classList.contains("play")) {
@@ -190,7 +157,14 @@ audio.addEventListener("ended", () => {
 volumeControl.addEventListener("input", () => {
     audio.volume = volumeControl.value;
     volume = volumeControl.value * 100;
+    volumeControl.style.background = `linear-gradient(to right, aqua 0%, aqua ${volume}%, #135e5a ${volume}%, #135e5a 100%)`;
 });
+
+progress.addEventListener("click", drugProgress);
+progress.addEventListener("mousemove", (e) => mousedown && drugProgress(e));
+progress.addEventListener("mousedown", () => (mousedown = true));
+progress.addEventListener("mouseup", () => (mousedown = false));
+
 
 
 prepareSong();
